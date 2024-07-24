@@ -25,7 +25,7 @@ restService.post("/echo", function(req, res) {
         "fulfillmentText": speech,
         "fulfillmentMessages": [{
             "text": {
-                "text": ["Hola! en que te puedo ayudar?"]
+                "text": ["🤖Hola! Bienvenido al chatbot de los portales interactivos de Ciudad Bolívar"]
             }
         }],
         "source": "<webhookpn1>"
