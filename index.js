@@ -20,18 +20,21 @@ restService.post("/echo", function(req, res) {
         req.body.queryResult.parameters.echoText ?
         req.body.queryResult.parameters.echoText :
         "Seems like some problem. Speak again." + req.body;
-    return res.json({
 
-        "fulfillmentText": speech,
-        "fulfillmentMessages": [{
-            "text": {
-                "text": ["🤖Hola! Bienvenido al chatbot de los portales interactivos de Ciudad Bolívar"]
-            }
-        }],
-        "source": "<webhookpn1>"
+    if (speech.echoText == "Hola") {
+        return res.json({
+
+            "fulfillmentText": speech,
+            "fulfillmentMessages": [{
+                "text": {
+                    "text": ["🤖Hola! Bienvenido al chatbot de los portales interactivos de Ciudad Bolívar"]
+                }
+            }],
+            "source": "<webhookpn1>"
 
 
-    });
+        });
+    }
 });
 
 restService.post("/echo", function(req, res) {
