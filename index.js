@@ -21,7 +21,7 @@ restService.post("/echo", function(req, res) {
         req.body.queryResult.parameters.echoText :
         "Seems like some problem. Speak again." + req.body;
 
-    if (speech.echoText == "Hola") {
+    if (speech.echoText == "Texto") {
         return res.json({
 
             "fulfillmentText": speech,
