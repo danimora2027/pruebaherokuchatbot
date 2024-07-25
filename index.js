@@ -34,6 +34,27 @@ restService.post("/echo", function(req, res) {
     });
 });
 
+restService.post("/echo", function(req, res) {
+    var speech =
+        req.body.queryResult &&
+        req.body.queryResult.parameters &&
+        req.body.queryResult.parameters.saludoText ?
+        req.body.queryResult.parameters.saludoText :
+        "Seems like some problem. Speak again." + req.body;
+    return res.json({
+
+        "fulfillmentText": speech,
+        "fulfillmentMessages": [{
+            "text": {
+                "text": ["Este es un saludo desde otro api"]
+            }
+        }],
+        "source": "<webhookpn1>"
+
+
+    });
+});
+
 
 restService.listen(process.env.PORT || 8000, function() {
     console.log("Server up and listening");
