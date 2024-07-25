@@ -34,7 +34,7 @@ restService.post("/echo", function(req, res) {
     });
 });
 
-restService.post("/brother", function(req, res) {
+restService.post("/echo", function(req, res) {
     var speech =
         req.body.queryResult &&
         req.body.queryResult.parameters &&
